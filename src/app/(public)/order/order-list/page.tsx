@@ -16,8 +16,6 @@ const OrdersList = () => {
     queryKey: ['orders'],
   });
 
-  console.log({ ordersList });
-
   if (loadingOrders) {
     return <div>Loading orders...</div>;
   }

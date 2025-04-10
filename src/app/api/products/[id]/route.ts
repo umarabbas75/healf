@@ -1,7 +1,6 @@
 import { deliveryDetails, ordersData } from '../data';
 
 export async function GET(request: any, { params }: any) {
-  console.log({ request });
   // Add a 300ms delay (shorter than the list endpoint)
   await new Promise((resolve) => setTimeout(resolve, 300));
 

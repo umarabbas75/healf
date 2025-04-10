@@ -18,7 +18,6 @@ const OrderDetail = () => {
   });
   const { order, deliveryDetails } = data || {};
   const { name, address, zipCode, country } = deliveryDetails || {};
-  console.log({ data, order, deliveryDetails });
 
   // Calculate totals
   const subtotal = order?.items.reduce((sum: any, item: any) => sum + item.price, 0);
