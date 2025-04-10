@@ -1,4 +1,4 @@
-import ordersData from '../data';
+import { deliveryDetails, ordersData } from '../data';
 
 export async function GET(request: any, { params }: any) {
   console.log({ request });
@@ -20,7 +20,7 @@ export async function GET(request: any, { params }: any) {
     });
   }
 
-  return new Response(JSON.stringify(order), {
+  return new Response(JSON.stringify({ order, deliveryDetails }), {
     headers: {
       'Content-Type': 'application/json',
     },

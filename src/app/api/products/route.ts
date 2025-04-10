@@ -1,4 +1,4 @@
-import ordersData from './data';
+import { ordersData } from './data';
 
 export async function GET() {
   await new Promise((resolve) => setTimeout(resolve, 500));

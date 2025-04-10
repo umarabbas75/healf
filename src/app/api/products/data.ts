@@ -1,4 +1,4 @@
-import { Order } from '@/types/order';
+import { DeliveryDetails, Order } from '@/types/order';
 
 const ordersData: Order[] = [
   {
@@ -33,7 +33,7 @@ const ordersData: Order[] = [
         ],
       },
     ],
-    shipping: 4.99,
+    shipping: 3.0,
     discount: 5.0,
   },
   {
@@ -46,7 +46,7 @@ const ordersData: Order[] = [
         title: 'ZBiotics Pre-Alcohol Probiotic Drink',
         price: 43.99,
         images: [
-          'https://healf.com/_next/image?url=https%3A%2F%2Fcd…737-849b7c9a5543.png%3Fv%3D1699897456&w=1080&q=75',
+          'https://healf.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0405%2F7291%2F1765%2Fproducts%2FFrame519.jpg%3Fv%3D1668119513&w=1080&q=75',
         ],
       },
       {
@@ -55,7 +55,7 @@ const ordersData: Order[] = [
         title: 'Ultimate Omega 2x',
         price: 41.49,
         images: [
-          'https://healf.com/_next/image?url=https%3A%2F%2Fcd…b9d-879e94b7915b.png%3Fv%3D1744095516&w=1080&q=75',
+          'https://healf.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0405%2F7291%2F1765%2Fproducts%2FTrueCollagen_Front.png%3Fv%3D1643996829&w=3840&q=75',
         ],
       },
       {
@@ -64,7 +64,7 @@ const ordersData: Order[] = [
         title: 'Humantra - Elderberry',
         price: 32.0,
         images: [
-          '	https://healf.com/_next/image?url=https%3A%2F%2Fcd…iles%2FFrame4828.png%3Fv%3D1723541608&w=1080&q=75',
+          'https://healf.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0405%2F7291%2F1765%2Fproducts%2FFrame502.jpg%3Fv%3D1667974176&w=3840&q=75',
         ],
       },
     ],
@@ -72,5 +72,12 @@ const ordersData: Order[] = [
     discount: 0,
   },
 ];
+const deliveryDetails: DeliveryDetails = {
+  name: 'Joe Bloggs',
+  address: '15 Marylebone High Street',
+  city: 'London',
+  zipCode: 'WC12 123',
+  country: 'United Kingdom',
+};
 
-export default ordersData;
+export { ordersData, deliveryDetails };

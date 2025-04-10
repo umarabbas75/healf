@@ -13,3 +13,11 @@ export interface Order {
   shipping: number;
   discount: number;
 }
+
+export interface DeliveryDetails {
+  name: string;
+  address: string;
+  city: string;
+  zipCode: string;
+  country: string;
+}
