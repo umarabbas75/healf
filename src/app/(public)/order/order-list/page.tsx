@@ -51,33 +51,49 @@ const OrdersList = () => {
   return (
     <div className="app-container">
       <h3 className="text-2xl mb-8 font-semibold">Orders</h3>
-      {ordersList?.map((order) => (
-        <div key={order.id}>
-          <div className="flex justify-between items-center mb-4">
-            <div>
-              <h2 className="font-medium">Order #{order.id}</h2>
-              <p className="text-sm text-muted-foreground">{formatDate(order.date, 'dd MMM yyyy')}</p>
+      {ordersList?.map((order) => {
+        const { id, date, items } = order;
+        const hasMoreItems = items.length > 3;
+
+        return (
+          <div key={id}>
+            <div className="flex justify-between items-center mb-4">
+              <div>
+                <h2 className="font-medium">Order #{id}</h2>
+                <p className="text-sm text-muted-foreground">{formatDate(date, 'dd MMM yyyy')}</p>
+              </div>
+              <Button
+                variant="default"
+                className="rounded-full bg-black hover:bg-gray-800"
+                onClick={() => router.push(`/order/order-detail/${id}`)}
+              >
+                View details
+              </Button>
             </div>
-            <Button
-              variant="default"
-              className="rounded-full bg-black hover:bg-gray-800"
-              onClick={() => {
-                router.push(`/order/order-detail/${order.id}`);
-              }}
-            >
-              View details
-            </Button>
-          </div>
 
-          <div className="space-y-4">
-            {order.items.slice(0, 3).map((item: OrderItem) => (
-              <OrderItemComp key={item.id} orderItem={item} />
-            ))}
-          </div>
+            <div className="space-y-4">
+              {items.slice(0, 3).map((item: OrderItem) => (
+                <OrderItemComp key={item.id} orderItem={item} />
+              ))}
 
-          <Separator className="my-4" />
-        </div>
-      ))}
+              {hasMoreItems && (
+                <div className="text-center">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-muted-foreground"
+                    onClick={() => router.push(`/order/order-detail/${id}`)}
+                  >
+                    + {items.length - 3} more items
+                  </Button>
+                </div>
+              )}
+            </div>
+
+            <Separator className="my-4" />
+          </div>
+        );
+      })}
     </div>
   );
 };

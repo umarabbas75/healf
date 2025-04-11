@@ -1,4 +1,4 @@
-import { deliveryDetails, ordersData } from '../data';
+import { deliveryDetails, ordersData } from '../../../../data/order';
 
 export async function GET(request: any, { params }: any) {
   // Add a 300ms delay (shorter than the list endpoint)

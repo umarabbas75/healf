@@ -30,11 +30,9 @@ const OrderDetail = () => {
 
   return (
     <div className="app-container">
-      {/* Order Header */}
-      <h1 className="text-2xl font-bold mb-6">Order #79678</h1>
+      <h3 className="text-2xl mb-8 font-semibold">Order #79678</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 ">
-        {/* Column 1: Delivery Details */}
         <div className=" rounded-lg ">
           <h2 className=" font-semibold mb-4">Delivery details</h2>
           <div className="space-y-2 text-gray-700">
@@ -45,7 +43,6 @@ const OrderDetail = () => {
           </div>
         </div>
 
-        {/* Column 2: Order Summary */}
         <div className="rounded-lg ">
           <h2 className=" font-semibold mb-4">Order summary</h2>
           <div className="space-y-3">
@@ -68,7 +65,7 @@ const OrderDetail = () => {
       <Separator className="my-4" />
 
       <div className="space-y-4">
-        {order?.items.slice(0, 3).map((item: OrderItem) => <OrderItemComp key={item.id} orderItem={item} />)}
+        {order?.items.map((item: OrderItem) => <OrderItemComp key={item.id} orderItem={item} />)}
       </div>
     </div>
   );

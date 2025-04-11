@@ -3,6 +3,8 @@ export interface OrderItem {
   title: string;
   vendor: string;
   price: number;
+  quantity: number;
+
   images: string[];
 }
 
@@ -10,8 +12,6 @@ export interface Order {
   id: string;
   date: string;
   items: OrderItem[];
-  shipping: number;
-  discount: number;
 }
 
 export interface DeliveryDetails {
