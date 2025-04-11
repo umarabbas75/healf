@@ -14,6 +14,11 @@ import OrderItemComp from '../_components/order-item';
 
 const OrdersList = () => {
   const router = useRouter();
+
+  /**
+   * Fetches orders list using standardized API facade.
+   * Returns data, loading state, and error handling.
+   */
   const {
     data: ordersList,
     isLoading: loadingOrders,

@@ -10,6 +10,11 @@ type ApiGetCallProps<TData = any, TError = any> = {
   axiosConfig?: AxiosRequestConfig;
 };
 
+/**
+ * Facade for react-query GET requests.
+ * Standardizes API calls with auth, query key management, and config options.
+ * Benefits: Reduces boilerplate, ensures consistency, and simplifies error handling.
+ */
 export function useApiGet<TData = any, TError = any>({
   endpoint,
   config = {},

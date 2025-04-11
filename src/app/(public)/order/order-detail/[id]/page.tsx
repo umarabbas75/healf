@@ -13,6 +13,11 @@ import OrderItemComp from '../../_components/order-item';
 const OrderDetail = () => {
   const params = useParams();
   const { id } = params;
+
+  /**
+   * Fetches single order details with ID-based query key.
+   * Only triggers when ID exists (enabled: !!id).
+   */
   const { data, isLoading: loadingOrder } = useApiGet<OrderDetailResponse>({
     endpoint: `api/orders/${id}`,
     queryKey: queryKeys.orders.byId(id as string),
@@ -20,6 +25,7 @@ const OrderDetail = () => {
       enabled: !!id,
     },
   });
+
   const { order, deliveryDetails } = data || {};
   const { name, address, zipCode, country } = deliveryDetails || {};
 
