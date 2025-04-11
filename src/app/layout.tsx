@@ -4,8 +4,6 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
 
-import { Toaster } from '@/components/ui/toaster';
-
 import QueryProvider from './providers/queryCientProvider';
 import 'react-loading-skeleton/dist/skeleton.css';
 const oepnsans = Open_Sans({
@@ -24,10 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${oepnsans.className}   h-full`}>
         <NextTopLoader />
-        <QueryProvider>
-          {children}
-          <Toaster />
-        </QueryProvider>
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

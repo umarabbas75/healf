@@ -7,7 +7,7 @@ export async function GET(request: any, { params }: any) {
   // Get the ID from route params
   const { id } = params;
 
-  // Find the user
+  // Find the order
   const order = ordersData?.find((order) => Number(order.id) === Number(id));
 
   if (!order) {

@@ -6,7 +6,7 @@ import axiosAuth from '@/utils/axiosAuth';
 type ApiGetCallProps<TData = any, TError = any> = {
   endpoint: string;
   config?: UseQueryOptions<TData, TError>;
-  queryKey: any[];
+  queryKey: readonly any[];
   axiosConfig?: AxiosRequestConfig;
 };
 

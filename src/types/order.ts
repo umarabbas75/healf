@@ -21,3 +21,8 @@ export interface DeliveryDetails {
   zipCode: string;
   country: string;
 }
+
+export interface OrderDetailResponse {
+  order: Order;
+  deliveryDetails: DeliveryDetails;
+}
