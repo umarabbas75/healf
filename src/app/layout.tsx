@@ -15,6 +15,10 @@ const oepnsans = Open_Sans({
 export const metadata: Metadata = {
   title: 'Healf Assessment Test',
   description: 'Healf Assessment Test',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
